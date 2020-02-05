@@ -1,0 +1,11 @@
+C:\Users\Administrator\Desktop\CinemaProj\Model\bin\Debug\Model.dll
+C:\Users\Administrator\Desktop\CinemaProj\Model\bin\Debug\Model.pdb
+C:\Users\Administrator\Desktop\CinemaProj\Model\obj\Debug\Model.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\CinemaProj\Model\obj\Debug\Model.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\CinemaProj\Model\obj\Debug\Model.dll
+C:\Users\Administrator\Desktop\CinemaProj\Model\obj\Debug\Model.pdb
+E:\Asp.Net\CinemaProj\Model\bin\Debug\Model.dll
+E:\Asp.Net\CinemaProj\Model\bin\Debug\Model.pdb
+E:\Asp.Net\CinemaProj\Model\obj\Debug\Model.dll
+E:\Asp.Net\CinemaProj\Model\obj\Debug\Model.pdb
+E:\Asp.Net\CinemaProj\Model\obj\Debug\Model.csprojAssemblyReference.cache

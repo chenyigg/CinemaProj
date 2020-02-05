@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Manage.master.cs" Inherits="WebUI.Manage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <!--CSS RESET-->
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <!--ssMenu CSS-->
+    <link href="Content/ManageCss/demo.css" rel="stylesheet" />
+    <link href="Content/ManageCss/htmleaf-demo.css" rel="stylesheet" />
+    <link href="Content/ManageCss/normalize.css" rel="stylesheet" />
+    <link href="Content/ManageCss/ss-menu.css" rel="stylesheet" />
+</head>
+<body>
+    <nav class="ss-menu ">
+        <ul>
+            <li id="toMovieManage"><a href="#1"><i class="fa fa-desktop"></i>电影管理</a></li>
+            <li id="toChipManage">
+                <a href="#1"><i class="fa fa-bar-chart"></i>排片管理 </a>
+            </li>
+            <li><a href="#1"><i class="fa fa-heartbeat"></i>新闻管理 </a></li>
+            <li><a href="#1"><i class="fa fa-bank"></i>影院管理</a></li>
+            <li><a href="#1"><i class="fa fa-cc-paypal"></i>评论管理</a></li>
+            <li><a href="#1"><i class="fa fa-bookmark-o"></i>热点管理 </a></li>
+            <li><a href="#1"><i class="fa fa-car"></i>订单管理 </a></li>
+            <li><a href="#1"><i class="fa fa-user-circle"></i>用户管理</a></li>
+        </ul>
+    </nav>
+
+    <form id="form1" runat="server">
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+
+    <script src="Scripts/jquery-3.4.1.min.js"></script>
+    <script src="Scripts/ManageJs/jquery.ss.menu.js"></script>
+    <script>
+        $(document).ready(function () {
+
+            $(".ss-menu").ssMenu();
+
+        });
+    </script>
+    <script>
+        $(function () {
+            var ssMenu = $(".ss-menu");
+            var theme = $(".theme-picker").find("span");
+
+            $(theme).click(function (y) {
+
+                y = $(this).attr("class");
+
+                $(ssMenu).removeClass().addClass("ss-menu " + y); //Aaah what a nice
+
+            });
+
+            $(".set-default").click(function () {
+                $(ssMenu).removeClass().addClass("ss-menu default");
+
+            });
+
+            $("#toMovieManage").click(function () {
+                window.location.href = "MovieManage.aspx";
+            })
+
+            $("#toChipManage").click(function () {
+                window.location.href = "ChipManage.aspx";
+            })
+
+        });
+    </script>
+</body>
+</html>
