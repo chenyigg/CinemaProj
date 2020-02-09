@@ -16,22 +16,18 @@ namespace WebUI
             //页面初始化
             if (!IsPostBack)
             {
+                CinemaInfoModel oi = new CinemaInfoModel();
+                oi.CinemaID = Convert.ToInt32(Request["CinemaID"]);
+                om = new ChooseOfficeBLL().FindOffice(oi);
+
                 if (!String.IsNullOrEmpty(Request["CinemaID"]) && !String.IsNullOrEmpty(Request["MovieID"]))
                 {
-                    CinemaInfoModel oi = new CinemaInfoModel();
-                    oi.CinemaID = Convert.ToInt32(Request["CinemaID"]);
-                    om = new ChooseOfficeBLL().FindOffice(oi);
-
                     //绑定电影封面
                     this.Repeater1.DataSource = new ChooseOfficeBLL().FindMovieInfo(new MovieInfoModel() { MovieID = Convert.ToInt32(Request["MovieID"]) }, oi);
                     this.Repeater1.DataBind();
                 }
                 if (!String.IsNullOrEmpty(Request["CinemaID"]) && String.IsNullOrEmpty(Request["MovieID"]))
                 {
-                    CinemaInfoModel oi = new CinemaInfoModel();
-                    oi.CinemaID = Convert.ToInt32(Request["CinemaID"]);
-                    om = new ChooseOfficeBLL().FindOffice(oi);
-
                     //绑定电影封面
                     this.Repeater1.DataSource = new ChooseOfficeBLL().FindMovieInfo(new MovieInfoModel() { MovieID = 0 }, oi);
                     this.Repeater1.DataBind();

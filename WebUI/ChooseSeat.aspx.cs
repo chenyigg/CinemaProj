@@ -18,47 +18,29 @@ namespace WebUI
 
             if (!String.IsNullOrEmpty(Request["Method"]))
             {
-                //加载座位方法
-                if (Request["Method"] == "loadSeatInfo")
+                switch (Request["Method"])
                 {
-                    loadSeatInfo(Request["OfficeID"].ToString(), Request["ChipInfoID"].ToString());
-                }
-            }
-            if (!String.IsNullOrEmpty(Request["Method"]))
-            {
-                //确定选座方法
-                if (Request["Method"] == "sureChooseSeat")
-                {
-                    string[] strArray = Request["SeatIDarray"].Replace("[", string.Empty).Replace("]", string.Empty).Split(',');
-                    string pp = Request["chipInfoID"];
-                    sureChooseSeat(strArray, Request["ChipInfoID"].ToString(), Request["officeID"].ToString(), Request["Money"].ToString());
-                }
-            }
+                    case "loadSeatInfo":
+                        loadSeatInfo(Request["OfficeID"].ToString(), Request["ChipInfoID"].ToString());
+                        break;
 
-            if (!String.IsNullOrEmpty(Request["Method"]))
-            {
-                //加载电影方法
-                if (Request["Method"] == "loadMovieInfo")
-                {
-                    loadMovieInfo(Request["ChipInfoID"].ToString());
-                }
-            }
+                    case "sureChooseSeat":
+                        string[] strArray = Request["SeatIDarray"].Replace("[", string.Empty).Replace("]", string.Empty).Split(',');
+                        string pp = Request["chipInfoID"];
+                        sureChooseSeat(strArray, Request["ChipInfoID"].ToString(), Request["officeID"].ToString(), Request["Money"].ToString());
+                        break;
 
-            if (!String.IsNullOrEmpty(Request["Method"]))
-            {
-                //加载厅名方法
-                if (Request["Method"] == "loadOffice")
-                {
-                    loadOffice(Request["ChipInfoID"].ToString());
-                }
-            }
+                    case "loadMovieInfo":
+                        loadMovieInfo(Request["ChipInfoID"].ToString());
+                        break;
 
-            if (!String.IsNullOrEmpty(Request["Method"]))
-            {
-                //加载电影名方法
-                if (Request["Method"] == "loadCinema")
-                {
-                    loadCinema(Request["ChipInfoID"].ToString());
+                    case "loadOffice":
+                        loadOffice(Request["ChipInfoID"].ToString());
+                        break;
+
+                    case "loadCinema":
+                        loadCinema(Request["ChipInfoID"].ToString());
+                        break;
                 }
             }
         }

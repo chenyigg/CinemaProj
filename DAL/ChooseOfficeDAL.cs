@@ -181,19 +181,6 @@ namespace DAL
             }
             reader.Close();
 
-            //如果有传入电影ID，则将该电影放置在首位
-            if (mi.MovieID != 0)
-            {
-                for (int i = 0; i < ls.Count; i++)
-                {
-                    if (ls[i].MovieID == mi.MovieID)
-                    {
-                        ls.Insert(0, ls[i]);
-                        ls.RemoveAt(i + 1);
-                    }
-                }
-            }
-
             return ls;
         }
 
